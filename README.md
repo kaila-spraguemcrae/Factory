@@ -58,6 +58,8 @@ This project uses the following technologies:
 
 ## 🐛 Known Bugs
 
+01.08.2021 : unable to display engineers `"LastName", "FirstName"` in drop down list when creating a new Machine
+
 -------------------
 
 ## 🔧 Setup & Requirements
