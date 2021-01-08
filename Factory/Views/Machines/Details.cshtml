@@ -28,6 +28,6 @@ else
   </ul>
 }
 
-@* <p>"Add a Licensed Engineer"</p> *@
-@* <p>"Edit this machine's details"</p> *@
-@* <p>"Delete this machine"</p> *@
+<p>@Html.ActionLink("Add a Licensed Engineer", "AddEngineer", new { id = Model.MachineId }, new { @class="btn btn-dark"})</p>
+<p>@Html.ActionLink("Edit this machine's details", "Edit", new { id = Model.MachineId }, new { @class="btn btn-dark"})</p>
+<p>@Html.ActionLink("Delete this machine", "Delete", new { id = Model.MachineId }, new { @class="btn btn-dark"})</p>
