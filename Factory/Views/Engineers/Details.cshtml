@@ -19,15 +19,15 @@ else
     @foreach (var join in Model.Machines)
     {
       <li>@join.Machine.MachineName</li>
-      @* @using (@Html.BeginForm("Delete<Machine>", "Engineers"))
+      @using (@Html.BeginForm("Delete<Machine>", "Engineers"))
       {
-        @Html.Hidden("joinId", @join.<Machine>EngineerId)
-        <input type="submit" value="Delete" />
-      } *@
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Delete" class="btn btn-secondary"/>
+      }
     }
   </ul>
 }
 
-@* <p>"Add a Machine"</p> *@
-@* <p>"Edit this engineers's details"</p> *@
-@* <p>"Delete this engineer"</p> *@
+<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.EngineerId }, new { @class="btn btn-dark"})</p>
+<p>@Html.ActionLink("Edit this engineer's details", "Edit", new { id = Model.EngineerId }, new { @class="btn btn-dark"})</p>
+<p>@Html.ActionLink("Delete this engineer", "Delete", new { id = Model.EngineerId }, new { @class="btn btn-dark"})</p>
