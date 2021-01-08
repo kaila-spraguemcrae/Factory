@@ -58,7 +58,9 @@ This project uses the following technologies:
 
 ## 🐛 Known Bugs
 
-01.08.2021 : unable to display engineers `"LastName", "FirstName"` in drop down list when creating a new Machine
+| Date | Error | Handled | Solution |
+| :------------- | :------------- | :------------- | :------------- |
+| 01.08.2021 | unable to display engineers `"LastName", "FirstName"` in drop down list when creating a new Machine | true | added get perameters to `FullName` in Engineer Class |
 
 -------------------
 
