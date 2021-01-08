@@ -1,3 +1,27 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer
+
+<h1>Add a new Engineer:</h1>
+<hr />
+
+@using (Html.BeginForm())
+{
+  <p>
+    @Html.Label("First Name:")
+    @Html.TextBoxFor(model => model.FirstName)
+  </p>
+  <p>
+    @Html.Label("Last Name")
+    @Html.TextBoxFor(model => model.LastName)
+  </p>
+  <p>
+    @Html.Label("Machines")
+    @Html.DropDownList("MachineId")
+  </p>
+  <p>
+    <input type="submit" value="Add new engineer" class="btn btn-dark" />
+  </p>
+}

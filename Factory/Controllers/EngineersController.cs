@@ -20,6 +20,7 @@ namespace Factory.Controllers
       engineerList.Sort((x, y) => string.Compare(x.LastName, y.LastName));
       return View(engineerList);
     }
+
     public ActionResult Details(int id)
     {
       var thisEngineer = _db.Engineers
@@ -27,6 +28,24 @@ namespace Factory.Controllers
         .ThenInclude(join => join.Machine)
         .FirstOrDefault(engineer => engineer.EngineerId == id); 
       return View(thisEngineer);
+    }
+
+    public ActionResult Create()
+    {
+      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "MachineName");
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Engineer engineer, int MachineId)
+    {
+      _db.Engineers.Add(engineer);
+      if (MachineId != 0)
+      {
+        _db.EngineerMachine.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
