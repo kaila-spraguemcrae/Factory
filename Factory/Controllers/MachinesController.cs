@@ -19,5 +19,13 @@ namespace Factory.Controllers
     {
       return View(_db.Machines.ToList());
     }
+    public ActionResult Details(int id)
+    {
+      var thisMachine = _db.Machines
+        .Include(machine => machine.Engineers)
+        .ThenInclude(join => join.Engineer)
+        .FirstOrDefault(machine => machine.MachineId == id); 
+      return View(thisMachine);
+    }
   }
 }

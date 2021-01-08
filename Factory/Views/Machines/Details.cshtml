@@ -16,12 +16,15 @@ else
 {
   <h4>Licensed Engineers:</h4>
   <ul>
-    <li>{@join.Engineer.LastName}, {@join.Engineer.FirstName}</li>
-    @* @using (@Html.BeginForm("DeleteEngineer", "Machines"))
+    @foreach (var join in Model.Engineers)
     {
-      @Html.Hidden("joinId", @join.EngineerMachineId)
-      <input type="submit" value="Delete" />
-    } *@
+      <li>{@join.Engineer.LastName}, {@join.Engineer.FirstName}</li>
+      @* @using (@Html.BeginForm("DeleteEngineer", "Machines"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineId)
+        <input type="submit" value="Delete" />
+      } *@
+    }
   </ul>
 }
 
