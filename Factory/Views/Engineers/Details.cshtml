@@ -1,3 +1,33 @@
 @{
   Layout = "_Layout";
 }
+
+@model Factory.Models.Engineer;
+
+<h1>Engineer Details</h1>
+<hr />
+<h3>@Html.DisplayFor(model => model.LastName), @Html.DisplayFor(model => model.FirstName)</h3>
+
+@if(@Model.Machines.Count == 0)
+{
+  <p>There are no Machines listed</p>
+}
+else
+{
+  <h4>Machine(s) licensed to repair:</h4>
+  <ul>
+    @foreach (var join in Model.Machines)
+    {
+      <li>{@join.Machine.MachineName}</li>
+      @* @using (@Html.BeginForm("Delete<Machine>", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.<Machine>EngineerId)
+        <input type="submit" value="Delete" />
+      } *@
+    }
+  </ul>
+}
+
+@* <p>"Add a Machine"</p> *@
+@* <p>"Edit this engineers's details"</p> *@
+@* <p>"Delete this engineer"</p> *@

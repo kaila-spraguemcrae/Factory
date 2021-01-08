@@ -20,5 +20,13 @@ namespace Factory.Controllers
       engineerList.Sort((x, y) => string.Compare(x.LastName, y.LastName));
       return View(engineerList);
     }
+    public ActionResult Details(int id)
+    {
+      var thisEngineer = _db.Engineers
+        .Include(engineer => engineer.Machines)
+        .ThenInclude(join => join.Machine)
+        .FirstOrDefault(engineer => engineer.EngineerId == id); 
+      return View(thisEngineer);
+    }
   }
 }
