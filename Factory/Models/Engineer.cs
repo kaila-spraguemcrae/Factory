@@ -1,8 +1,4 @@
-
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 
 namespace Factory.Models
 {
@@ -17,6 +13,6 @@ namespace Factory.Models
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string FullName { get { return this.LastName + ", " + this.FirstName; } }
-    public ICollection<EngineerMachine> Machines { get; /*set; */}
+    public ICollection<EngineerMachine> Machines { get; }
   }
 }
