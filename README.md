@@ -37,13 +37,13 @@ This project uses the following technologies:
 
 ## Specifications
 
-![SQL Design](./ReadmeAssets/img "SQL Database Design")
+![SQL Design](./ReadmeAssets/img/DatabaseDesign.png "SQL Database Design")
 
 
 <details>
 <summary>User Stories</summary>
 
-| Story # | User Story | Complete |
+| Story# | User Story | Complete |
 | :------------- | :------------- | :------------- |
 | 01 | As the factory manager, I need to be able to see a list of all engineers, and I need to be able to see a list of all machines. | true |
 | 02 | As the factory manager, I need to be able to select a engineer, see their details, and see a list of all machines that engineer is licensed to repair. I also need to be able to select a machine, see its details, and see a list of all engineers licensed to repair it. | true |
@@ -75,7 +75,7 @@ This project uses the following technologies:
 - **Prefered Code Editor**
 
 
-### ⚙️ Open & Use
+### ⚙️ Clone or Download
 
 #### To Download:
 
@@ -87,10 +87,12 @@ Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/FINISH-U
 2. Open Terminal or GitBash and input the command: `git clone https://github.com/kaila-spraguemcrae/FINISH-URL`
 3. To view the code, open the copied directory with Visual Studio Code or your preferred text editor by inputing the command `code .` in your terminal.
 
+### 🧰 Database Setup Options
 
-#### AppSettings:
+#### AppSettings (option 1):
 
-After you have the project on your computer you will need to create a file in the root directory of the project called "appsettings.json". Add the following snippet of code to the appsettings.json file:
+- After you have the project on your computer you will need to create a file in the root directory of the project called "appsettings.json". 
+- Add the following snippet of code to the appsettings.json file:
 
 ```
 {
@@ -101,11 +103,21 @@ After you have the project on your computer you will need to create a file in th
 ```
 *Please note you will need to replace `YOUR-PASSWORD-HERE` with the password you created for your MySQL server.
 
-#### Import Database using Entity Framework Core:
+#### Import Database using Entity Framework Core (option 1 continued):
 
-#### Import Database using MySQL Workbench:
+ - In the command line run ` cd Desktop/Factory.Solution/Factory` to navigate to the "Factory" folder. 
+ - Next, run `dotnet ef database update` to generate the database. You can confirm the database was created by checking MySQL workbench.
 
-#### Import Database using SQL Schema:
+*to make changed to the database you can run `dotnet ef migrations add <MigrationName>`
+
+#### Import Database using MySQL Workbench (option 2):
+
+ - Open MySQL workbench and go to the navigation bar and select `Server > Data Import`. 
+ - Next, select the option `Import from Self-Contained File` and confirm you have the file `kaila_spraguemcrae_factory.sql` set to be imported (this files exists in the root directory of this project). 
+ - Then, set the `Defaul Target Schema` or create a new schema and select all the the Schema Objects you want to be imported. 
+ - Check that the option `Dump Structure and Data` is selected. Once you confirm you have all of the correct settings click `Start Import`.
+
+#### Import Database using SQL Schema (option 3):
 
 #### Running/viewing application:
 
