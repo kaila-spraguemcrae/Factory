@@ -112,12 +112,48 @@ Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/FINISH-U
 
 #### Import Database using MySQL Workbench (option 2):
 
- - Open MySQL workbench and go to the navigation bar and select `Server > Data Import`. 
- - Next, select the option `Import from Self-Contained File` and confirm you have the file `kaila_spraguemcrae_factory.sql` set to be imported (this files exists in the root directory of this project). 
- - Then, set the `Defaul Target Schema` or create a new schema and select all the the Schema Objects you want to be imported. 
- - Check that the option `Dump Structure and Data` is selected. Once you confirm you have all of the correct settings click `Start Import`.
+- Open MySQL workbench and go to the navigation bar and select `Server > Data Import`. 
+- Next, select the option `Import from Self-Contained File` and confirm you have the file `kaila_spraguemcrae_factory.sql` set to be imported (this files exists in the root directory of this project). 
+- Then, set the `Defaul Target Schema` or create a new schema and select all the the Schema Objects you want to be imported. 
+- Check that the option `Dump Structure and Data` is selected. Once you confirm you have all of the correct settings click `Start Import`.
 
 #### Import Database using SQL Schema (option 3):
+
+- Open your MySQL management tool and paste the following Create Statement to generate the database:
+
+```
+CREATE DATABASE `kaila_spraguemcrae_factory` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */;
+
+CREATE TABLE `__EFMigrationsHistory` (
+  `MigrationId` varchar(95) NOT NULL,
+  `ProductVersion` varchar(32) NOT NULL,
+  PRIMARY KEY (`MigrationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `EngineerMachine` (
+  `EngineerMachineId` int(11) NOT NULL AUTO_INCREMENT,
+  `EngineerId` int(11) NOT NULL,
+  `MachineId` int(11) NOT NULL,
+  PRIMARY KEY (`EngineerMachineId`),
+  KEY `IX_EngineerMachine_EngineerId` (`EngineerId`),
+  KEY `IX_EngineerMachine_MachineId` (`MachineId`),
+  CONSTRAINT `FK_EngineerMachine_Engineers_EngineerId` FOREIGN KEY (`EngineerId`) REFERENCES `engineers` (`EngineerId`) ON DELETE CASCADE,
+  CONSTRAINT `FK_EngineerMachine_Machines_MachineId` FOREIGN KEY (`MachineId`) REFERENCES `machines` (`MachineId`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `Engineers` (
+  `EngineerId` int(11) NOT NULL AUTO_INCREMENT,
+  `FirstName` longtext,
+  `LastName` longtext,
+  PRIMARY KEY (`EngineerId`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `Machines` (
+  `MachineId` int(11) NOT NULL AUTO_INCREMENT,
+  `MachineName` longtext,
+  PRIMARY KEY (`MachineId`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
 
 #### Running/viewing application:
 
