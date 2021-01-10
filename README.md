@@ -19,7 +19,7 @@ This application allows the user to keep track of Engineers and Machines in Dr. 
 
 This is the Independent Project for Epicodus week 11 as part of the "Many-to-Many Relationships" coursework. 
 
-<img src= "https://s4.gifyu.com/images/Hnet-imageb27b07124bbc83e4.gif">
+<img src= "https://s4.gifyu.com/images/Hnet-imageb27b07124bbc83e4.gif" width="800">
 
 --------------------
 
