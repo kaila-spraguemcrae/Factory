@@ -83,7 +83,7 @@ This project uses the following technologies:
 
 #### To Download:
 
-Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/FINISH-URL](https://guthub.com/kaila.spraguemcrae/FINISH-URL), and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file
+Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/Factory](https://guthub.com/kaila.spraguemcrae/Factory), and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file
 
 #### To clone (my prefered method):
 
@@ -161,7 +161,7 @@ CREATE TABLE `Machines` (
 
 #### Running/viewing application:
 
-1. Once you have opened the code in your preferred text editor you will need to navigate to the 'PROJNAME' folder (`cd PROJNAME`) in the command line and run `dotnet run` or `dotnet watch run`.
+1. Once you have opened the code in your preferred text editor you will need to navigate to the 'Factory.Solution/Factory' folder (`cd Factory`) in the command line and run `dotnet run` or `dotnet watch run`.
 2. At this point you should be able to click on the link to the local server's url path to view the compiled project. 
 
 --------------------------
