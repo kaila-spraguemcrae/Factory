@@ -106,6 +106,7 @@ Go to my GitHub repository here, [https://guthub.com/kaila.spraguemcrae/Factory]
 }
 ```
 *Please note you will need to replace `YOUR-PASSWORD-HERE` with the password you created for your MySQL server.
+*You may also need to update `uid`, `port`, or `database` name depending on your configurations.
 
 #### Import Database using Entity Framework Core (option 1 continued):
 
